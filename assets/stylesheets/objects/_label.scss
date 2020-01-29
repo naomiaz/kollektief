@@ -1,0 +1,27 @@
+/* ========================================================================== */
+/* OBJECTS | Label */
+/* ========================================================================== */
+
+.label {
+  // position: relative;
+  display: inline;
+  padding: 8px 8px 12px;
+  background-color: $color--label;
+  color: $color--text;
+  box-shadow: 20px 0 0 0 $color--label, -20px 0 0 0 $color--label;
+
+  // &:before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   background-color: blue;
+  //   padding: 10px;
+  //   height: 50px;
+  //   width: 100%;
+  //   left: 0;
+  //   top: 0;
+  //   z-index: -1;
+  // }
+}
+
+.label--logo { padding: 5px 75px 25px 15px; }

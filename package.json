@@ -1,0 +1,22 @@
+{
+  "name": "KOLLEKTIEF",
+  "version": "1.0.0",
+  "scripts": {
+    "css": "gulp",
+    "css-watch": "gulp watch"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-group-css-media-queries": "1.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "@types/gulp": "^4.0.6",
+    "@types/gulp-autoprefixer": "0.0.32",
+    "@types/gulp-rename": "0.0.33",
+    "@types/gulp-sass": "^4.0.0"
+  }
+}

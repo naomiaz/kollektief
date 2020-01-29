@@ -1,0 +1,20 @@
+/* ========================================================================== */
+/* TOOLS | Mixins */
+/* ========================================================================== */
+
+// Use: @include fluid-sizing( 320px, 1280px, 16px, 32px );
+// Use: @include fluid-sizing( 320px, 1280px, 16px, 32px, 'margin-top' );
+@mixin fluid-sizing($min-vw, $max-vw, $min-size, $max-size, $attr: "font-size") {
+  #{$attr}: $min-size;
+
+  @media screen and (min-width: $min-vw) {
+    #{$attr}: calc(
+      #{$min-size} + #{strip-unit($max-size) - strip-unit($min-size)} *
+        ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+    );
+  }
+
+  @media screen and (min-width: $max-vw) {
+    #{$attr}: $max-size;
+  }
+}
