@@ -410,9 +410,9 @@ h1,
 h2,
 body {
   margin: 0;
-  font-size: 2.8rem;
+  font-size: 42px;
   line-height: 2;
-  font-size: 1.2rem;
+  font-size: 20px;
 }
 
 p {
@@ -527,8 +527,8 @@ a:focus:after {
   padding: 8px 8px 12px;
   background-color: #000;
   color: #FFF;
-  -webkit-box-shadow: 20px 0 0 0 #000, -20px 0 0 0 #000;
-  box-shadow: 20px 0 0 0 #000, -20px 0 0 0 #000;
+  -webkit-box-shadow: 10px 0 0 0 #000, -10px 0 0 0 #000;
+  box-shadow: 10px 0 0 0 #000, -10px 0 0 0 #000;
 }
 
 .label--logo {
@@ -539,7 +539,15 @@ a:focus:after {
   h1,
   h2,
   body {
-    font-size: calc( 1.2rem + strip-unit(2.8rem)-strip-unit(1.2rem) * ((100vw - 320px) / strip-unit(960px)));
+    font-size: calc( 20px + 22 * ((100vw - 320px) / 960));
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .label {
+    padding: 8px 8px 12px;
+    -webkit-box-shadow: 20px 0 0 0 #000, -20px 0 0 0 #000;
+    box-shadow: 20px 0 0 0 #000, -20px 0 0 0 #000;
   }
 }
 
@@ -554,7 +562,7 @@ a:focus:after {
   h1,
   h2,
   body {
-    font-size: 2.8rem;
+    font-size: 42px;
   }
 }
 

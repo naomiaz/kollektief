@@ -3,12 +3,11 @@
 /* ========================================================================== */
 
 .label {
-  // position: relative;
   display: inline;
   padding: 8px 8px 12px;
   background-color: $color--label;
   color: $color--text;
-  box-shadow: 20px 0 0 0 $color--label, -20px 0 0 0 $color--label;
+  box-shadow: 10px 0 0 0 $color--label, -10px 0 0 0 $color--label;
 
   // &:before {
   //   content: '';
@@ -22,6 +21,11 @@
   //   top: 0;
   //   z-index: -1;
   // }
+
+  @media only screen and (min-width: 480px) {
+    padding: 8px 8px 12px;
+    box-shadow: 20px 0 0 0 $color--label, -20px 0 0 0 $color--label;
+  }
 }
 
 .label--logo { padding: 5px 75px 25px 15px; }
