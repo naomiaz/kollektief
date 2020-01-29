@@ -9,10 +9,19 @@ const cleanCSS     = require('gulp-clean-css');
 const rename       = require('gulp-rename');
 const gcmq         = require('gulp-group-css-media-queries');
 
+// Build Task
+var build = gulp.series(
+  css, video
+);
+
+exports.default = build;
+
 // Watcher
 function watch() {
   gulp.watch('./assets/stylesheets/**/*.scss', gulp.series('css'));
 }
+
+exports.watch = watch;
 
 // CSS task
 function css() {
@@ -27,6 +36,12 @@ function css() {
     .pipe(gulp.dest("./wwwroot/css"))
 }
 
+// Video task
+function video() {
+  return gulp
+    .src("./assets/*.mp4")
+    .pipe(gulp.dest("./wwwroot"))
+}
+
 exports.css = css;
-exports.default = css;
-exports.watch = watch;
+exports.video = video;
