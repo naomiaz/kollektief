@@ -3,7 +3,7 @@
 /* ========================================================================== */
 
 // Overflow
-.overflow--scroll { overflow: scroll; }
+.overflow--scroll { overflow-y: auto; }
 
 // Container
 .container {
@@ -13,7 +13,7 @@
 }
 
 .container--m {
-  max-width: 1050px;
+  max-width: 950px;
 }
 
 // Gutter
@@ -21,7 +21,7 @@
   padding-left: $gutter--mobile;
   padding-right: $gutter--mobile;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 825px) {
     padding-left: $gutter--desktop;
     padding-right: $gutter--desktop;
   }
