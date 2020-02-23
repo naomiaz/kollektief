@@ -2,6 +2,9 @@
 /* OBJECTS | Helpers */
 /* ========================================================================== */
 
+// Overflow
+.overflow--scroll { overflow: scroll; }
+
 // Container
 .container {
   margin-left: auto;
@@ -15,12 +18,12 @@
 
 // Gutter
 .gutter--m {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: $gutter--mobile;
+  padding-right: $gutter--mobile;
 
   @media screen and (min-width: 768px) {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: $gutter--desktop;
+    padding-right: $gutter--desktop;
   }
 }
 
@@ -29,4 +32,16 @@
 
 .text-block {
   &:not(:last-child) { margin-bottom: 4rem; }
+}
+
+// Screen reader text
+.sr-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

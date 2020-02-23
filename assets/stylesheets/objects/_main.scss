@@ -1,0 +1,19 @@
+/* ========================================================================== */
+/* OBJECTS | Main */
+/* ========================================================================== */
+
+.main {
+  .header,
+  .container {
+    animation: fadein 1s;
+    animation-fill-mode: backwards;
+  }
+
+  // .header { animation-delay: 1.5s; }
+  .container { animation-delay: 4s; }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

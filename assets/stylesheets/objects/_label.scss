@@ -4,28 +4,22 @@
 
 .label {
   display: inline;
-  padding: 8px 8px 12px;
+  padding: 8px 0 12px;
   background-color: $color--label;
   color: $color--text;
   box-shadow: 10px 0 0 0 $color--label, -10px 0 0 0 $color--label;
 
-  // &:before {
-  //   content: '';
-  //   display: block;
-  //   position: absolute;
-  //   background-color: blue;
-  //   padding: 10px;
-  //   height: 50px;
-  //   width: 100%;
-  //   left: 0;
-  //   top: 0;
-  //   z-index: -1;
-  // }
-
   @media only screen and (min-width: 480px) {
-    padding: 8px 8px 12px;
     box-shadow: 20px 0 0 0 $color--label, -20px 0 0 0 $color--label;
   }
 }
 
-.label--logo { padding: 5px 75px 25px 15px; }
+.label--logo {
+  // margin-left: ((-1 * $gutter--mobile) + 10px);
+  padding: 9px 15px 18px;
+
+  @media only screen and (min-width: $breakpoint--tablet) {
+    margin-left: 0;
+    padding: 5px 15px 25px;
+  }
+}

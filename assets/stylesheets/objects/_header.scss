@@ -3,10 +3,54 @@
 /* ========================================================================== */
 
 .header {
+  position: relative;
+  height: 100vh;
   margin-bottom: 100px;
   font-weight: $weight--bold;
 }
 
-.logo {
+.header__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   letter-spacing: 6px;
+
+  &:empty { display: none; }
+
+  // &.aos-animate {
+  //   transform: translate(0);
+  //   top: 0;
+  //   left: 0;
+  // }
+}
+
+.header__scroll {
+  position: absolute;
+  border: 2px solid $color--text;
+  bottom: 60px;
+  left: calc(50vw - 11px);
+  width: 22px;
+  height: 36px;
+  border-radius: 18px;
+  box-shadow: 1px 1px 3px 0 $color--shadow;
+
+  &::before {
+    content: '';
+    animation: scroll 1s linear infinite;
+    animation-fill-mode: forwards;
+    background-color: $color--text;
+    border-radius: 100%;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    left: 7px;
+    top: 7px;
+    box-shadow: 1px 1px 3px 0 $color--shadow;
+  }
+}
+
+@keyframes scroll {
+  from { top: 7px; }
+  to { top: 21px; }
 }

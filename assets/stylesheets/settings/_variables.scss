@@ -14,7 +14,14 @@ $weight--medium: 500;
 $weight--bold: 700;
 
 // ----- Colors
-$color--text: #FFF;
+$color--text: #fff;
 $color--text--hover: #d7a000;
 $color--label: #000;
-$color--bg: #BDD9EC;
+$color--bg: #bdd9ec;
+$color--shadow: rgba(0, 0, 0, .5);
+
+// ----- Sizes
+$breakpoint--tablet: 768px;
+
+$gutter--mobile: 30px;
+$gutter--desktop: 80px;
