@@ -3,7 +3,10 @@
 /* ========================================================================== */
 
 // Overflow
-.overflow--scroll { overflow-y: auto; }
+.overflow--scroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
 // Container
 .container {

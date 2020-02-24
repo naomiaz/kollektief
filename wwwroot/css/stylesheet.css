@@ -449,7 +449,7 @@ a:focus {
 /* ========================================================================== */
 
 .overflow--scroll {
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 .container {
@@ -459,7 +459,7 @@ a:focus {
 }
 
 .container--m {
-  max-width: 1050px;
+  max-width: 950px;
 }
 
 .gutter--m {
@@ -692,7 +692,7 @@ a:focus {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 825px) {
   .gutter--m {
     padding-left: 80px;
     padding-right: 80px;
