@@ -11,17 +11,20 @@
 <body class="wrap">
   <main class="main">
     <header class="header gutter--m">
-      <h1 class="header__logo logo label label--logo" data-aos data-aos-easing="ease-in-sine" data-aos-anchor="#trigger-logo"></h1>
+      <div class="header__logo">
+        <h1 id="logo" class="label label--logo"></h1>
+      </div>
+      <!-- <button class="header__button" id="scroll" onClick="scrollToContent"></button> -->
       <span class="" id="scroll"></span>
     </header>
 
     <!-- TODO -->
-    <!-- Mobile screenshot -->
-    <!-- when scrolling it attaches to top https://css-tricks.com/aos-css-driven-scroll-animation-library/ -->
+    <!-- Mobile screenshot as background image -->
+    <!-- when scrolling it attaches to top (position sticky) https://css-tricks.com/aos-css-driven-scroll-animation-library/ -->
     <!--  Parallax when scrolling down -->
     <!--  Fade in on page load -->
 
-    <section class="container container--m gutter--m text--center" id="trigger-logo">
+    <section class="container container--m gutter--m text--center">
       <div class="text-block">
         <p class="label">
           KOLLEKTIEF is a collaboration between <a href="https://www.linkedin.com/in/gijsdehaan/">Gijs de Haan</a>, <a href="https://www.linkedin.com/in/vincent-peters-4346a4128/">Vincent Peters</a> and <a href="https://www.linkedin.com/in/corn%C3%A9-strootman-533aa2128/">Corn&eacute; Strootman</a>.
@@ -50,42 +53,50 @@
         Sorry, your browser doesn't support embedded videos.
       </video>
     </div>
-
   </main>
 
-  <script src="node_modules/aos/dist/aos.js"></script>
-  <!-- <script>
-    AOS.init({
-      easing: 'ease-in-out-sine'
-    });
-  </script> -->
-  <script>
-    AOS.init();
-  </script>
-  <script>
-  const html = document.documentElement;
-  const main = document.querySelector('.main');
-  const scroll = document.querySelector('#scroll');
-  const logo = document.querySelector('.header__logo');
-  let text = "KOLLEKTIEF";
-  let i = 0;
-  const speed = 150;
 
-  function typeWriter() {
-    if (i < text.length) {
-      logo.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
+
+  <script>
+    const html = document.documentElement;
+    const main = document.querySelector('.main');
+    const scroll = document.querySelector('#scroll');
+    const logo = document.querySelector('#logo');
+    let text = "KOLLEKTIEF";
+    let i = 0;
+    const speed = 150;
+
+    function typeWriter() {
+      if (i < text.length) {
+        logo.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
     }
-  }
 
-  document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(typeWriter, 2000);
-    setTimeout(function() {
-      html.classList.add('overflow--scroll');
-      scroll.classList.add('header__scroll');
-    }, 4000);
-  });
+    function scrollToContent() {
+      console.log('scroll')
+      let viewportHeight = window.innerHeight;
+      window.scrollBy({
+        top: viewportHeight,
+        left: 0,
+        behavior: 'smooth',
+      });
+      setTimeout("scrollToContent", 6000);
+    }
+
+    scroll.addEventListener('click', scrollToContent);
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // setTimeout(function() {
+      //     html.scrollTop = 0;
+      // }, 15);
+      setTimeout(typeWriter, 2000);
+      setTimeout(function() {
+        html.classList.add('overflow--scroll');
+        scroll.classList.add('header__scroll');
+      }, 4000);
+    });
   </script>
 </body>
 </html>

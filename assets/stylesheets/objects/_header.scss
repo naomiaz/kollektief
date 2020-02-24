@@ -4,25 +4,39 @@
 
 .header {
   position: relative;
-  height: 100vh;
+  margin-top: 45vh;
+  height: 55vh;
   margin-bottom: 100px;
   font-weight: $weight--bold;
 }
 
 .header__logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: sticky;
+  top: 0;
+  margin: 0 auto;
+  text-align: center;
   letter-spacing: 6px;
+  z-index: 10;
 
-  &:empty { display: none; }
+  .label--logo {
+    &:empty { display: none; }
+  }
+}
 
-  // &.aos-animate {
-  //   transform: translate(0);
-  //   top: 0;
-  //   left: 0;
-  // }
+.header__button {
+  display: inline-block;
+  padding: 0;
+  background: transparent;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: $color--text--hover;
+    cursor: pointer;
+
+    &::before { background-color: $color--text--hover; }
+  }
 }
 
 .header__scroll {
@@ -34,19 +48,21 @@
   height: 36px;
   border-radius: 18px;
   box-shadow: 1px 1px 3px 0 $color--shadow;
+  transition: border-color .3s;
 
   &::before {
     content: '';
     animation: scroll 1s linear infinite;
     animation-fill-mode: forwards;
     background-color: $color--text;
-    border-radius: 100%;
+    border-radius: 50%;
     position: absolute;
-    width: 8px;
-    height: 8px;
-    left: 7px;
-    top: 7px;
+    width: 7px;
+    height: 7px;
+    left: 50%;
+    transform: translateX(-50%);
     box-shadow: 1px 1px 3px 0 $color--shadow;
+    transition: background-color .3s;
   }
 }
 

@@ -404,6 +404,7 @@ template {
 
 html {
   overflow: hidden;
+  min-width: 320px;
 }
 
 body {
@@ -417,7 +418,6 @@ h2,
 body {
   font-size: 20px;
   margin: 0;
-  font-size: 42px;
   line-height: 2;
 }
 
@@ -449,7 +449,8 @@ a:focus {
 /* ========================================================================== */
 
 .overflow--scroll {
-  overflow-y: auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .container {
@@ -533,22 +534,45 @@ a:focus {
 
 .header {
   position: relative;
-  height: 100vh;
+  margin-top: 45vh;
+  height: 55vh;
   margin-bottom: 100px;
   font-weight: 700;
 }
 
 .header__logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  margin: 0 auto;
+  text-align: center;
   letter-spacing: 6px;
+  z-index: 10;
 }
 
-.header__logo:empty {
+.header__logo .label--logo:empty {
   display: none;
+}
+
+.header__button {
+  display: inline-block;
+  padding: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.header__button:hover,
+.header__button:focus {
+  outline: none;
+  border-color: #d7a000;
+  cursor: pointer;
+}
+
+.header__button:hover::before,
+.header__button:focus::before {
+  background-color: #d7a000;
 }
 
 .header__scroll {
@@ -561,6 +585,8 @@ a:focus {
   border-radius: 18px;
   -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: border-color .3s;
+  transition: border-color .3s;
 }
 
 .header__scroll::before {
@@ -570,14 +596,17 @@ a:focus {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   background-color: #fff;
-  border-radius: 100%;
+  border-radius: 50%;
   position: absolute;
-  width: 8px;
-  height: 8px;
-  left: 7px;
-  top: 7px;
+  width: 7px;
+  height: 7px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
   -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.5);
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
 }
 
 @-webkit-keyframes scroll {
@@ -644,7 +673,8 @@ a:focus {
 }
 
 .label--logo {
-  padding: 9px 15px 18px;
+  display: inline-block;
+  padding: 0 15px 12px;
 }
 
 @media screen and (min-width: 320px) {
@@ -684,11 +714,6 @@ a:focus {
   a:focus::after {
     background-color: #d7a000;
     width: 0;
-  }
-
-  .label--logo {
-    margin-left: 0;
-    padding: 5px 15px 25px;
   }
 }
 
