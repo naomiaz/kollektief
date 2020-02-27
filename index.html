@@ -69,7 +69,7 @@
     const video = document.querySelector('#bg-video');
     let text = "KOLLEKTIEF";
     let i = 0;
-    const speed = 150;
+    const speed = 500;
 
     function typeWriter() {
       if (i < text.length) {
@@ -78,6 +78,7 @@
         setTimeout(function() {
           typeWriter()
         }, speed);
+        console.log('logo: ' + logo.innerHTML)
       }
     }
 
@@ -101,7 +102,7 @@
       setTimeout(function() {
         typeWriter()
       }, 2000);
-      
+
       setTimeout(function() {
         html.classList.add('overflow--scroll');
         scroll.classList.add('header__scroll');
