@@ -14,49 +14,49 @@
       <div class="header__logo">
         <h1 id="logo" class="label label--logo"></h1>
       </div>
-      <!-- <button class="header__button" id="scroll" onClick="scrollToContent"></button> -->
-      <span class="" id="scroll"></span>
+      <button class="header__button" id="scroll" onClick="scrollToContent"></button>
     </header>
 
     <!-- TODO -->
     <!-- Mobile screenshot as background image -->
-    <!-- when scrolling it attaches to top (position sticky) https://css-tricks.com/aos-css-driven-scroll-animation-library/ -->
     <!--  Parallax when scrolling down -->
     <!--  Fade in on page load -->
 
-    <section class="container container--m gutter--m text--center">
-      <div class="text-block">
-        <p class="label">
-          KOLLEKTIEF is a collaboration between <a href="https://www.linkedin.com/in/gijsdehaan/">Gijs de Haan</a>, <a href="https://www.linkedin.com/in/vincent-peters-4346a4128/">Vincent Peters</a> and <a href="https://www.linkedin.com/in/corn%C3%A9-strootman-533aa2128/">Corn&eacute; Strootman</a>.
-        </p>
+    <div class="parallax">
+      <section class="container container--m gutter--m text--center parallax__layer parallax__layer--base">
+        <div class="text-block">
+          <p class="label">
+            KOLLEKTIEF is a collaboration between <a href="https://www.linkedin.com/in/gijsdehaan/">Gijs de Haan</a>, <a href="https://www.linkedin.com/in/vincent-peters-4346a4128/">Vincent Peters</a> and <a href="https://www.linkedin.com/in/corn%C3%A9-strootman-533aa2128/">Corn&eacute; Strootman</a>.
+          </p>
+        </div>
+
+        <div class="text-block">
+          <p class="label">As urbanists and landscape architects, we research and design innovative spatial solutions.</p>
+        </div>
+
+        <div class="text-block">
+          <p class="label">We have been selected as runner-ups in <a href="https://e15rotterdam.nl/winners-europan-15-announced/">Europan15 x Productive Rotterdam</a> with our development strategy for Groot-IJsselmonde.</p>
+        </div>
+
+        <div class="text-block">
+          <h2 class="label">Want to work with us?</h2>
+          <p class="label"><a href="mailto:contact@kollektief.com">contact@kollektief.com</a></p>
+        </div>
+      </section>
+
+
+      <div class="fs-background parallax__layer parallax__layer--back">
+        <!-- https://caniuse.com/#feat=video  -->
+        <video loop muted autoplay buffered playsinline class="video fs-background__video">
+          <source src="assets/film.mp4" type="video/mp4">
+          Sorry, your browser doesn't support embedded videos.
+        </video>
       </div>
-
-      <div class="text-block">
-        <p class="label">As urbanists and landscape architects, we research and design innovative spatial solutions.</p>
-      </div>
-
-      <div class="text-block">
-        <p class="label">We have been selected as runner-ups in <a href="https://e15rotterdam.nl/winners-europan-15-announced/">Europan15 x Productive Rotterdam</a> with our development strategy for Groot-IJsselmonde.</p>
-      </div>
-
-      <div class="text-block">
-        <h2 class="label">Want to work with us?</h2>
-        <p class="label"><a href="mailto:contact@kollektief.com">contact@kollektief.com</a></p>
-      </div>
-    </section>
-
-
-    <div class="fs-background">
-      <!-- https://caniuse.com/#feat=video  -->
-      <video loop muted autoplay buffered playsinline class="video fs-background__video">
-        <source src="assets/film.mp4" type="video/mp4">
-        Sorry, your browser doesn't support embedded videos.
-      </video>
     </div>
   </main>
 
 
-
+  <script src="./assets/js/smoothscroll.min.js">smoothscroll.polyfill();</script>
   <script>
     const html = document.documentElement;
     const main = document.querySelector('.main');
@@ -75,22 +75,20 @@
     }
 
     function scrollToContent() {
-      console.log('scroll')
       let viewportHeight = window.innerHeight;
       window.scrollBy({
-        top: viewportHeight,
+        top: viewportHeight - 100,
         left: 0,
         behavior: 'smooth',
       });
-      setTimeout("scrollToContent", 6000);
+      setTimeout(function() {
+        scroll.parentNode.removeChild(scroll);
+      }, 1000);
     }
 
     scroll.addEventListener('click', scrollToContent);
 
     document.addEventListener("DOMContentLoaded", function() {
-      // setTimeout(function() {
-      //     html.scrollTop = 0;
-      // }, 15);
       setTimeout(typeWriter, 2000);
       setTimeout(function() {
         html.classList.add('overflow--scroll');
