@@ -10,7 +10,11 @@
   left: 0;
   overflow: hidden;
   z-index: -100;
+  opacity: 0;
+  transition: opacity .3s;
 }
+
+.fs-background--visible { opacity: 1; }
 
 .fs-background__video {
   position: absolute;

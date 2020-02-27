@@ -653,6 +653,13 @@ a:focus {
   left: 0;
   overflow: hidden;
   z-index: -100;
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.fs-background--visible {
+  opacity: 1;
 }
 
 .fs-background__video {
