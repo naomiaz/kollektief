@@ -56,7 +56,9 @@
   </main>
 
 
-  <script src="./assets/js/smoothscroll.min.js">smoothscroll.polyfill();</script>
+  <script src="./assets/js/smoothscroll.min.js">
+    smoothscroll.polyfill();
+  </script>
   <script>
     const html = document.documentElement;
     const main = document.querySelector('.main');
@@ -70,7 +72,9 @@
       if (i < text.length) {
         logo.innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeWriter, speed);
+        setTimeout(function() {
+          typeWriter()
+        }, speed);
       }
     }
 
