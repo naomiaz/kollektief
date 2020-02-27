@@ -589,10 +589,22 @@ a:focus {
 
 .header__scroll::before {
   content: '';
-  -webkit-animation: scroll 1s linear infinite;
-  animation: scroll 1s linear infinite;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
   background-color: #fff;
   border-radius: 50%;
   position: absolute;

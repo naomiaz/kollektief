@@ -52,8 +52,14 @@
 
   &::before {
     content: '';
-    animation: scroll 1s linear infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
     animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-name: scroll;
     background-color: $color--text;
     border-radius: 50%;
     position: absolute;
