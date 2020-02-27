@@ -20,9 +20,7 @@
     </header>
 
     <!-- TODO -->
-    <!-- Mobile screenshot as background image -->
-    <!--  Parallax when scrolling down -->
-    <!--  Fade in on page load -->
+    <!-- Fix settimeout on safari -->
 
     <div class="parallax">
       <section class="container container--m gutter--m text--center parallax__layer parallax__layer--base">
@@ -48,7 +46,6 @@
 
 
       <div class="fs-background parallax__layer parallax__layer--back">
-        <!-- https://caniuse.com/#feat=video  -->
         <video loop muted autoplay buffered playsinline class="video fs-background__video" id="video">
           <source src="assets/film-s.mp4" type="video/mp4">
           Sorry, your browser doesn't support embedded videos.
@@ -78,7 +75,6 @@
         setTimeout(function() {
           typeWriter()
         }, speed);
-        console.log('logo: ' + logo.innerHTML)
       }
     }
 
