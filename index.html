@@ -47,9 +47,9 @@
       </section>
 
 
-      <div id="bg-video" class="fs-background parallax__layer parallax__layer--back">
+      <div class="fs-background parallax__layer parallax__layer--back">
         <!-- https://caniuse.com/#feat=video  -->
-        <video loop muted autoplay buffered playsinline class="video fs-background__video">
+        <video loop muted autoplay buffered playsinline class="video fs-background__video" id="video">
           <source src="assets/film.mp4" type="video/mp4">
           Sorry, your browser doesn't support embedded videos.
         </video>
@@ -66,7 +66,7 @@
     const main = document.querySelector('.main');
     const scroll = document.querySelector('#scroll');
     const logo = document.querySelector('#logo');
-    const video = document.querySelector('#bg-video');
+    const video = document.querySelector('#video');
     let text = "KOLLEKTIEF";
     let i = 0;
     const speed = 200;
@@ -97,7 +97,7 @@
     scroll.addEventListener('click', scrollToContent);
 
     document.addEventListener("DOMContentLoaded", function() {
-      video.classList.add('fs-background--visible');
+      video.classList.add('video--visible');
 
       setTimeout(function() {
         typeWriter()

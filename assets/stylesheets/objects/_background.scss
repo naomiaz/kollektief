@@ -10,11 +10,7 @@
   left: 0;
   overflow: hidden;
   z-index: -100;
-  opacity: 0;
-  transition: opacity .3s;
 }
-
-.fs-background--visible { opacity: 1; }
 
 .fs-background__video {
   position: absolute;
@@ -25,7 +21,11 @@
   min-width: 100%;
   min-height: 100%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity .3s;
 }
+
+.video--visible { opacity: 1; }
 
 // @media (max-width: 480px) {
 //   .fs-background {
