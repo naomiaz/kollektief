@@ -35,7 +35,7 @@
     border-color: $color--text--hover;
     cursor: pointer;
 
-    &::before { background-color: $color--text--hover; }
+    .header__scroll-btn { background-color: $color--text--hover; }
   }
 }
 
@@ -50,8 +50,13 @@
   box-shadow: 1px 1px 3px 0 $color--shadow;
   transition: border-color .3s;
 
-  &::before {
-    content: '';
+  .header__scroll-btn {
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    left: 50%;
+    transform: translateX(-50%);
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-delay: 0s;
@@ -62,11 +67,6 @@
     animation-name: scroll;
     background-color: $color--text;
     border-radius: 50%;
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    left: 50%;
-    transform: translateX(-50%);
     box-shadow: 1px 1px 3px 0 $color--shadow;
     transition: background-color .3s;
   }
