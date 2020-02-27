@@ -95,7 +95,9 @@
     scroll.addEventListener('click', scrollToContent);
 
     document.addEventListener("DOMContentLoaded", function() {
-      setTimeout(typeWriter, 2000);
+      setTimeout(function() {
+        typeWriter
+      }, 2000);
       setTimeout(function() {
         html.classList.add('overflow--scroll');
         scroll.classList.add('header__scroll');
