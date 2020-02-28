@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="wwwroot/css/stylesheet.min.css">
 </head>
-<body class="wrap">
+<body class="wrap" onResize="getLogoHeight()">
   <main class="main">
     <header class="header gutter--m">
       <div class="header__logo">
@@ -21,6 +21,8 @@
 
     <!-- TODO -->
     <!-- Fix settimeout on safari -->
+    <!-- Fix position scroll button on mobile with adress bar -->
+    <!-- Favicon -->
 
     <div class="parallax">
       <section class="container container--m gutter--m text--center parallax__layer parallax__layer--base">
@@ -64,6 +66,7 @@
     const scroll = document.querySelector('#scroll');
     const logo = document.querySelector('#logo');
     const video = document.querySelector('#video');
+    let logoHeight;
     let text = "KOLLEKTIEF";
     let i = 0;
     const speed = 200;
@@ -78,10 +81,14 @@
       }
     }
 
+    function getLogoHeight() {
+      return logoHeight = logo.clientHeight;
+    }
+
     function scrollToContent() {
       let viewportHeight = window.innerHeight;
       window.scrollTo({
-        top: viewportHeight - 100,
+        top: viewportHeight - getLogoHeight(),
         left: 0,
         behavior: 'smooth',
       });
