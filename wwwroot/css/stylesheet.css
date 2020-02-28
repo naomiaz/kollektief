@@ -400,10 +400,14 @@ template {
 
 /* ========================================================================== */
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   overflow: hidden;
   min-width: 320px;
-  height: 100%;
 }
 
 body {
@@ -486,6 +490,10 @@ a:focus {
   border: 0;
 }
 
+.fullscreen {
+  min-height: 100%;
+}
+
 /* ========================================================================== */
 
 /* OBJECTS | Main */
@@ -532,9 +540,17 @@ a:focus {
 /* ========================================================================== */
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
-  margin-top: 45vh;
-  height: 55vh;
   margin-bottom: 100px;
   font-weight: 700;
 }
@@ -560,6 +576,7 @@ a:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border: none;
 }
 
 .header__button:hover,

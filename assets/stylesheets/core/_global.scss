@@ -2,10 +2,14 @@
 /* CORE | Global styles */
 /* ========================================================================== */
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   overflow: hidden;
   min-width: 320px;
-  height: 100%;
 }
 
 body {

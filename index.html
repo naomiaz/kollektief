@@ -18,19 +18,18 @@
   <meta name="theme-color" content="#101010">
 </head>
 <body class="wrap" onResize="getLogoHeight()">
+  <header class="header fullscreen gutter--m">
+    <div class="header__logo">
+      <h1 id="logo" class="label label--logo"></h1>
+    </div>
+    <button class="header__button" id="scroll" onClick="scrollToContent">
+      <span class="header__scroll-btn"></span>
+    </button>
+  </header>
   <main class="main">
-    <header class="header gutter--m">
-      <div class="header__logo">
-        <h1 id="logo" class="label label--logo"></h1>
-      </div>
-      <button class="header__button" id="scroll" onClick="scrollToContent">
-        <span class="header__scroll-btn"></span>
-      </button>
-    </header>
 
     <!-- TODO -->
     <!-- Fix settimeout on safari -->
-    <!-- Fix position scroll button on mobile with adress bar -->
 
     <section class="container container--m gutter--m text--center">
       <div class="text-block">

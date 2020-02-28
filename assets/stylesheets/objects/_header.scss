@@ -3,9 +3,10 @@
 /* ========================================================================== */
 
 .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
-  margin-top: 45vh;
-  height: 55vh;
   margin-bottom: 100px;
   font-weight: $weight--bold;
 }
@@ -28,6 +29,7 @@
   padding: 0;
   background: transparent;
   appearance: none;
+  border: none;
 
   &:hover,
   &:focus {
