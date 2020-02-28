@@ -705,6 +705,8 @@ a:focus {
   color: #fff;
   -webkit-box-shadow: 10px 0 0 0 #000, -10px 0 0 0 #000;
   box-shadow: 10px 0 0 0 #000, -10px 0 0 0 #000;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .label--logo {
