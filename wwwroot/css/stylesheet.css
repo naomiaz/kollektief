@@ -500,6 +500,10 @@ a:focus {
 
 /* ========================================================================== */
 
+.main {
+  padding-bottom: 1px;
+}
+
 .main .header,
 .main .container {
   -webkit-animation: fadein 1s;
