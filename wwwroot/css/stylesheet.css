@@ -403,6 +403,7 @@ template {
 html {
   overflow: hidden;
   min-width: 320px;
+  height: 100%;
 }
 
 body {
