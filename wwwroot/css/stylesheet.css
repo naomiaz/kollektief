@@ -507,15 +507,15 @@ a:focus {
 
 .main .header,
 .main .container {
-  -webkit-animation: fadein .5s;
-  animation: fadein .5s;
+  -webkit-animation: fadein 1s;
+  animation: fadein 1s;
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
 
 .main .container {
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 @-webkit-keyframes fadein {
@@ -556,6 +556,7 @@ a:focus {
   -ms-flex-pack: center;
   justify-content: center;
   position: relative;
+  height: 100%;
   margin-bottom: 100px;
   font-weight: 700;
 }
