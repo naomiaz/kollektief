@@ -55,6 +55,7 @@ a {
   }
 
   &:hover,
+  &:active,
   &:focus {
     color: $color--text--hover;
     border-bottom-color: $color--text--hover;

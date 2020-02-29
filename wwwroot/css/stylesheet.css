@@ -440,6 +440,7 @@ a {
 }
 
 a:hover,
+a:active,
 a:focus {
   color: #d7a000;
   border-bottom-color: #d7a000;
@@ -584,6 +585,7 @@ a:focus {
 }
 
 .header__button:hover,
+.header__button:active,
 .header__button:focus {
   outline: none;
   border-color: #d7a000;
@@ -591,6 +593,7 @@ a:focus {
 }
 
 .header__button:hover .header__scroll-btn,
+.header__button:active .header__scroll-btn,
 .header__button:focus .header__scroll-btn {
   background-color: #d7a000;
 }
@@ -752,6 +755,7 @@ a:focus {
   }
 
   a:hover::after,
+  a:active::after,
   a:focus::after {
     background-color: #d7a000;
     width: 0;
