@@ -11,7 +11,7 @@ const gcmq         = require('gulp-group-css-media-queries');
 
 // Build Task
 var build = gulp.series(
-  css, video
+  css, video, js
 );
 
 exports.default = build;
@@ -43,5 +43,13 @@ function video() {
     .pipe(gulp.dest("./wwwroot"))
 }
 
+// Video task
+function js() {
+  return gulp
+    .src("./assets/js/**/*.js")
+    .pipe(gulp.dest("./wwwroot/js"))
+}
+
 exports.css = css;
 exports.video = video;
+exports.js = js;
