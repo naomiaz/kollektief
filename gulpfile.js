@@ -7,7 +7,6 @@ const sass         = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS     = require('gulp-clean-css');
 const rename       = require('gulp-rename');
-const gcmq         = require('gulp-group-css-media-queries');
 
 // Build Task
 var build = gulp.series(
@@ -28,7 +27,6 @@ function css() {
   return gulp
     .src("./assets/stylesheets/**/*.scss")
     .pipe(sass().on('error', sass.logError))
-    .pipe(gcmq({log: false}))
     .pipe(autoprefixer({ browsers: ['> 2%', 'last 2 versions'], cascade: false }))
     .pipe(gulp.dest("./wwwroot/css"))
     .pipe(rename({ suffix: '.min' }))
